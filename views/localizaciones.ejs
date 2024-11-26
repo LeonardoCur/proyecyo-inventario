@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Localizaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/style.css">
+
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="container">
+            <h1>Gestión de Localizaciones</h1>
+            
+            <!-- Botón para mostrar el formulario -->
+
+            <div class="titulo_boton">
+                
+                <h2>Lista de Localizaciones</h2>
+                <button class="show-form-button" id="showFormButton">Agregar Nueva Localización</button>
+            </div>
+                
+            <!-- Formulario para agregar una nueva localización -->
+            <form class="form_colapsable" id="newLocationForm" action="/localizaciones/agregar" method="POST">
+                <label for="nombre">Nombre de la Localización:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <button type="submit" class="save-button">Guardar Localización</button>
+            </form>
+
+            <!-- Lista de localizaciones -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% localizaciones.forEach(localizacion => { %>
+                        <tr>
+                            <td><%= localizacion.id %></td>
+                            <td><%= localizacion.nombre %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Script para mostrar y ocultar el formulario -->
+        <script>
+            const showFormButton = document.getElementById('showFormButton');
+            const newLocationForm = document.getElementById('newLocationForm');
+
+            showFormButton.addEventListener('click', () => {
+                if (newLocationForm.style.display === 'none' || newLocationForm.style.display === '') {
+                    newLocationForm.style.display = 'block';
+                    showFormButton.textContent = 'Ocultar Formulario';
+                } else {
+                    newLocationForm.style.display = 'none';
+                    showFormButton.textContent = 'Agregar Nueva Localización';
+                }
+            });
+        </script>
+
+    </main>
+
+    <%- include('partials/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>   
+</body>
+</html>

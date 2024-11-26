@@ -1,0 +1,449 @@
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  /* background-color: #007bff; */
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  margin-top: 56px; /* Espacio para el header */
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Alert Messages */
+.alert {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert.error {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+/* List Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #f4f4f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button Styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.cancel-button {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+button.save-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.titulo_boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+
+button {
+  margin-top: 10px;
+}
+
+.show-form-button {
+  margin: 20px 0;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.show-form-button:hover {
+  background-color: #0056b3;
+}  
+
+/* ////////////////// */
+
+
+/* Estilos adicionales */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form_colapsable {
+    margin-top: 20px;
+    display:none; /* Ocultar formulario inicialmente */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 10px;
+}
+
+.show-form-button {
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.show-form-button:hover {
+    background-color: #0056b3;
+}
+
+/* //////////////// */
+
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 56px; /* Altura del header */
+} 
+
+/* Header */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #212529 !important;
+  
+}
+
+/* Footer */
+
+footer p {
+  color: grey;
+}
+
+* Ajusta la altura y el diseño del footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 8px 0; /* Reduce la altura */
+  margin-top: auto; /* Empuja el footer al fondo */
+  width: 100%;
+  position: relative;
+}
+
+/* Alinea los elementos dentro del footer */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Agrega un poco de espacio horizontal */
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px; /* Espacio entre iconos */
+}
+
+.footer-icons img.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons img.social-icon:hover {
+  transform: scale(1.1); /* Efecto hover */
+}
+
+footer p {
+  margin: 0;
+  flex: 1;
+  text-align: center; /* Centra el texto */
+}
+
+
+
+/* Login Page */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.login-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Alert Messages */
+.alert {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert.error {
+  color: #fff;
+  background-color: #e74c3c;
+}
+.alert.error {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+a {
+  text-decoration: none; 
+  color: #007bff; 
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0056b3; 
+}
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.admin-list a {
+  display: block;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.admin-list a:hover {
+  background-color: #e9ecef;
+  transform: scale(1.02);
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.resultados {
+  margin-top: 30px;
+
+}
+
+/* Ajustes específicos para el formulario de stock */
+
+.stock-button {
+  max-width: 150px; 
+  width: 100%;
+}
+
+.boton_stock{
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para el mensaje de error */
+.alert.error {
+  color: white;
+  background-color: #e74c3c;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 15px;
+}

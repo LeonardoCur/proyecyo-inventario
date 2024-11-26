@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/style.css">
+    
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+
+        <div class="container">
+            <h1>Gestión de Productos</h1>
+            
+            
+            <!-- Formulario para agregar un nuevo producto -->
+            <form class="form_colapsable"  id="newProductForm" action="/productos/agregar" method="POST">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca">
+                
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" step="0.01" required>
+                
+                <label for="costo">Costo:</label>
+                <input type="number" id="costo" name="costo" step="0.01" required>
+                
+                <label for="medida">Medida:</label>
+                <input type="text" id="medida" name="medida">
+                
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" required>
+                
+                <label for="stock_minimo">Stock mínimo:</label>
+                <input type="number" id="stock_minimo" name="stock_minimo" required>
+                
+                <label for="proveedor_id">Proveedor:</label>
+                <select id="proveedor_id" name="proveedor_id" required>
+                    <% proveedores.forEach(proveedor => { %>
+                        <option value="<%= proveedor.id %>"><%= proveedor.nombre %></option>
+                        <% }) %>
+                    </select>
+                    
+                    <label for="localizacion_id">Localización:</label>
+                    <select id="localizacion_id" name="localizacion_id">
+                        <% localizaciones.forEach(localizacion => { %>
+                            <option value="<%= localizacion.id %>"><%= localizacion.nombre %></option>
+                            <% }) %>
+                        </select>
+                        
+                        <label for="observaciones">Observaciones:</label>
+                        <textarea id="observaciones" name="observaciones"></textarea>
+                        
+                        <button type="submit" class="save-button">Guardar Producto</button>
+                    </form>
+                    
+                    <!-- Lista de productos -->
+                    <div class="titulo_boton">
+                        <h2>Lista de Productos</h2>
+                        <!-- Botón para mostrar el formulario -->
+                        <button class="show-form-button" id="showFormButton">Agregar Nuevo Producto</button>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Marca</th>
+                                <th>Precio</th>
+                                <th>Costo</th>
+                                <th>Medida</th>
+                                <th>Stock</th>
+                                <th>Stock Mínimo</th>
+                                <th>Proveedor</th>
+                                <th>Localización</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% productos.forEach(producto => { %>
+                                <tr>
+                                    <td><%= producto.id %></td>
+                                    <td><%= producto.nombre %></td>
+                                    <td><%= producto.marca %></td>
+                                    <td>€<%= producto.precio %></td>
+                                    <td>€<%= producto.costo %></td>
+                                    <td><%= producto.medida %></td>
+                                    <td><%= producto.stock %></td>
+                                    <td><%= producto.stock_minimo %></td>
+                                    <td><%= producto.proveedor_nombre %></td>
+                                    <td><%= producto.localizacion_nombre %></td>
+                                    <td><%= producto.observaciones %></td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Script para mostrar y ocultar el formulario -->
+                    
+                    <script>
+                        const showFormButton = document.getElementById('showFormButton');
+                        const newProductForm = document.getElementById('newProductForm');
+                        
+                        showFormButton.addEventListener('click', () => {
+                            if (newProductForm.style.display === 'none' || newProductForm.style.display === '') {
+                                newProductForm.style.display = 'block';
+                                showFormButton.textContent = 'Ocultar Formulario';
+                            } else {
+                                newProductForm.style.display = 'none';
+                                showFormButton.textContent = 'Agregar Nuevo Producto';
+                            }
+                        });
+                        </script>
+        </div>
+
+     </main>
+
+<%- include('partials/footer') %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
