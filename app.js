@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); //prueba
 const session = require('express-session');
 const mysql = require('mysql');
 const dotenv = require('dotenv');
